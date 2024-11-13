@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 
 @SpringBootApplication
-public class PreEntrega1_EmilianoSilvettiApplication implements CommandLineRunner {
+public class PreEntrega2_EmilianoSilvettiApplication implements CommandLineRunner {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -22,11 +22,7 @@ public class PreEntrega1_EmilianoSilvettiApplication implements CommandLineRunne
     
 
     public static void main(String[] args) {
-    	
-    	
-        SpringApplication.run(PreEntrega1_EmilianoSilvettiApplication.class, args);
-        
-        
+        SpringApplication.run(PreEntrega2_EmilianoSilvettiApplication.class, args);
     }
 
     @Override

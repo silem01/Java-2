@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>com.coderhouse</groupId>
-    <artifactId>PreEntrega1_EmilianoSilvetti</artifactId>
+    <artifactId>PreEntrega2_EmilianoSilvetti</artifactId>
     <version>v1.0.0</version>
-    <name>PreEntrega1_EmilianoSilvetti</name>
-    <description>Mi primer App en Springboot</description>
+    <name>PreEntrega2_EmilianoSilvetti</name>
+    <description>Segunda PreEntrega</description>
 
     <properties>
         <java.version>17</java.version>
