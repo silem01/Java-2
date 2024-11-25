@@ -23,13 +23,23 @@ public class ProductoController {
         return new ResponseEntity<>(nuevoProducto, HttpStatus.CREATED);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Producto> actualizarProducto(@PathVariable Long id, @RequestBody Producto producto) {
+        try {
+            Producto productoActualizado = productoService.actualizarProducto(id, producto);
+            return new ResponseEntity<>(productoActualizado, HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Producto> obtenerProductoPorId(@PathVariable Long id) {
         Optional<Producto> producto = productoService.buscarProductoPorId(id);
-        
+
         return producto.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                       .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    	}
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
 
     @GetMapping
     public ResponseEntity<List<Producto>> listarProductos() {
@@ -39,11 +49,11 @@ public class ProductoController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarProducto(@PathVariable Long id) {
-    	
-        productoService.eliminarProducto(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        
-        
+        try {
+            productoService.eliminarProducto(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
-    
 }
