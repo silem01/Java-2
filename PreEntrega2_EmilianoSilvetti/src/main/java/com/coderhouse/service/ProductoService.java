@@ -15,6 +15,7 @@ public class ProductoService {
     private ProductoRepository productoRepository;
 
     public Producto guardarProducto(Producto producto) {
+    	
         return productoRepository.save(producto);
     }
 
@@ -23,6 +24,8 @@ public class ProductoService {
     }
 
     public List<Producto> listarProductos() {
+    	
+    	
         return productoRepository.findAll();
     }
 
