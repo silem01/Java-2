@@ -10,7 +10,7 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int cantidad;   // Esta propiedad ya existe para la cantidad de productos
+    private int cantidad;   
 
     private Date fecha;
 
@@ -25,15 +25,18 @@ public class Venta {
     @Column(nullable = false)
     private double total;
 
-    // Nueva propiedad para la cantidad total de productos (si es necesario separarlo)
+    // Nueva propiedad para la cantidad total de productos 
     private int cantidadProductos;
 
-    public Venta() {}
+    public Venta() {
+    	
+    }
 
     public Venta(int cantidad, Date fecha, Cliente cliente, Producto producto, double total, int cantidadProductos) {
         this.cantidad = cantidad;
         this.fecha = fecha;
         this.cliente = cliente;
+        
         this.producto = producto;
         this.total = total;
         this.cantidadProductos = cantidadProductos;

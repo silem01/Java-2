@@ -8,6 +8,7 @@ public class ComprobanteRequest {
     private List<LineaComprobanteRequest> lineas;
 
     public Cliente getCliente() {
+    	
         return cliente;
     }
 

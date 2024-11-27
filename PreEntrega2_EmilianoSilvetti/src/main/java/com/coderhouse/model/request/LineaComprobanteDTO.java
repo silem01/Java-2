@@ -4,8 +4,8 @@ import com.coderhouse.model.Producto;
 
 public class LineaComprobanteDTO {
 
-    private Producto producto;  // El producto asociado a esta línea
-    private int cantidad;       // La cantidad del producto en esta línea
+    private Producto producto;  // producto asociado a esta lonea
+    private int cantidad;       	// cantidad del producto en esta línea
 
     // Constructor
     public LineaComprobanteDTO(Producto producto, int cantidad) {
@@ -23,6 +23,8 @@ public class LineaComprobanteDTO {
     }
 
     public int getCantidad() {
+    	
+    	
         return cantidad;
     }
 
@@ -30,7 +32,7 @@ public class LineaComprobanteDTO {
         this.cantidad = cantidad;
     }
 
-    // Opcional: Un método para obtener el precio del producto
+    // metodo para obtener el precio del producto
     public double getPrecio() {
         return producto != null ? producto.getPrecio() : 0.0;
     }
